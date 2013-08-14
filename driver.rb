@@ -15,11 +15,13 @@ puts
 
 converter = String2Utf8.new
 
-converter.orig_string = input_string
-orig_char_codes = converter.getOrigCharCodes
-utf8_char_codes = converter.getUtf8CharCodes
+orig_char_codes = converter.getOrigCharCodes(input_string)
+utf8_char_codes = converter.getUtf8CharCodes(input_string)
+utf8_compliant = converter.checkCompliance(input_string)
 puts "Original Characters:\n#{orig_char_codes.join(" ")}"
 puts
 puts "UTF-8 Characters:\n#{utf8_char_codes.join(" ")}"
+puts
+puts "UTF-8 Compliant:\n#{utf8_compliant}"
 puts
 puts "done."
